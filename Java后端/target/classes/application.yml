@@ -1,0 +1,13 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tunnelurl?serverTimezone=UTC
+    username: root
+    password: '!Zyy38298989'
+
+logging:
+  level:
+    root: error
