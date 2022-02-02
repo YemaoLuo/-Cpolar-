@@ -6,10 +6,10 @@ import pymysql.cursors
 if __name__ == '__main__':
     tunnel = 'null'
     connect = pymysql.Connect(
-        host='114.132.44.105',
+        host='',
         port=3306,
         user='root',
-        passwd='!Zyy38298989',
+        passwd='',
         db='tunnelurl',
         charset='utf8'
     )
