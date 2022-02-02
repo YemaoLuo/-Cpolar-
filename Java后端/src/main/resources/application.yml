@@ -6,8 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/tunnelurl?serverTimezone=UTC
     username: root
-    password: 
+    password: ''
 
 logging:
   level:
     root: error
+
