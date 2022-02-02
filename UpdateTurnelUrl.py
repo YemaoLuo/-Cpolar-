@@ -15,16 +15,17 @@ if __name__ == '__main__':
     )
 
     while(True):
-        print('系统休眠中')
-        time.sleep(60)
-        response = requests.get('http://localhost:4040')
-        html = response.text
-        url = re.findall('[a-zA-z]+://[^\s]*', html)
-        if tunnel == '':
-            print('为探测到隧道 请检查隧道是否正常开启')
+        try:
+            response = requests.get('http://localhost:4040')
+            html = response.text
+            url = re.findall('[a-zA-z]+://[^\s]*', html)
+        except Exception:
+            print('隧道异常 请检查隧道状态')
             continue
         if tunnel == url[0][0:25]:
-            print('url未改变 url为：' + tunnel)
+            print('url未改变 url为：' + tunnel) 
+            print('系统休眠中')
+            time.sleep(30)
             continue
         tunnel = url[0][0:25]
         cursor = connect.cursor()
@@ -35,3 +36,5 @@ if __name__ == '__main__':
             print("数据库数据更新成功")
         cursor.close()
         print('当前隧道url为：' + tunnel)
+        print('系统休眠中')
+        time.sleep(30)
